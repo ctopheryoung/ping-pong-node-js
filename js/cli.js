@@ -1,7 +1,10 @@
 var pingPong = require('./ping-pong.js').pingPong;
+var prompt = require('prompt');
+prompt.start();
 
-var goal = prompt("What number do you want to ping-pong up to?")
-var result = pingPong(goarl);
-result.forEach(function(element) {
-  console.log(element);
+prompt.get('goal', function(err, result) {
+  var result = pingPong(result.goal);
+  result.forEach(function(element) {
+    console.log(element);
+  });
 });
